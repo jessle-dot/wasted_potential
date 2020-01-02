@@ -12,6 +12,31 @@
   <link rel="stylesheet" href ="./commentspage.css">
   <link href="http://longbootstraplink.css" rel="stylesheet">
   <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script>
+
+  function filterChanged() {
+    var nameValue = $("#kitchenNameSearch").val().toLowerCase();
+    var dayValue = $("#kitchenDayOpenSearch").val().toLowerCase();
+
+    $(".foodbank-table tr").not(":first").filter(function() {             // gets a list of each element with class table-name-row
+      var tableRow = $(this);                                   // this currently refers to the <td> (table-name-row), the parent is the whole <tr>
+                                                                         //  we need the whole <tr> because we want to hide the whole row
+      var nameFilterPasses = $('.table-name-row', this).text().toLowerCase().indexOf(nameValue) > -1;
+      var dayFilterPasses = $('.table-day-open-row', this).text().toLowerCase().indexOf(dayValue) > -1;
+
+
+      var shouldShowRow = nameFilterPasses && dayFilterPasses; // gets the current text in table-name-row. indexOf sees if our value (text input)
+                                                                            //  is in the <td>
+      tableRow.toggle(shouldShowRow)                                        // shows or hides <tr> based on shouldShowRow variable
+    });
+  }
+
+  $(document).ready(function() {                                           // the code in here is only run when the webpage is ready
+    $("#kitchenNameSearch").on("keyup", filterChanged);
+
+    $("#kitchenDayOpenSearch").on("keyup", filterChanged);
+  });
+  </script>
 
 </head>
 
@@ -77,11 +102,20 @@ tr:nth-child(even) {
 </head>
 <body>
 
-<h2>HTML Table</h2>
+<h2>Filter Kitechens By Name</h2>
+<p>Type something in the input field to search the list for specific items:</p>
+<input id="kitchenNameSearch" type="text" placeholder="Search by Name...">
+<br>
 
-<table>
+<h2>Filter Kitechens By Day Open</h2>
+<p> E.g. monday</p>
+<input id="kitchenDayOpenSearch" type="text" placeholder="Search by Day Open...">
+<br>
+
+<table class="foodbank-table">
   <tr>
     <th>Foodbank Name</th>
+    <th>Days Open</th>
     <th>Opening Hours</th>
     <th>Address</th>
     <th>Postcode</th>
@@ -89,15 +123,17 @@ tr:nth-child(even) {
 </tr>
 
 <tr>
-    <td>722 YOUNG PEOPLE SERVICE</td>
-    <td>9am-5pm</td>
+    <td class="table-name-row">722 YOUNG PEOPLE SERVICE</td>
+    <td class="table-day-open-row">Monday, Tuesday</td>
+    <td class="table-time-row">9am-5pm</td>
     <td>722 Leytonstone High Road, Leytonstone.</td>
     <td>E11 3AJ</td>
     <td>0300 555 1158</td>
   </tr>
 
   <tr>
-    <td>AMERICAN INTERNATIONAL CHURCH SOUP KITCHEN</td>
+    <td class="table-name-row">AMERICAN INTERNATIONAL CHURCH SOUP KITCHEN</td>
+    <td class="table-day-open-row">Monday, Tuesday</td>
     <td>10am-12am</td>
     <td>79a Tottenham Court Rd, (Entrance in Whitfield Street)</td>
     <td>W1T 4TD</td>
@@ -105,13 +141,14 @@ tr:nth-child(even) {
     </tr>
 
     <tr>
-      <td>BRIDGES</td>
+      <td class="table-name-row">BRIDGES</td>
+      <td class="table-day-open-row">Monday, Wednesday</td>
       <td>10am-2pm</td>
       <td>Memorial Community Church, 389-395 Barking Rd</td>
       <td>E13 8AL</td>
       <td>020 7474 6603</td>
     </tr>
-
+<!--
     <tr>
       <td>CARIS ISLINGTON</td>
       <td>7:30pm-8:30am <p>(Open only on 1 January - 31 March)</p></td>
@@ -170,7 +207,7 @@ tr:nth-child(even) {
     <td>N10 2PT</td>
     <td> 020 8444 7027</td>
   </tr>
-  
+
 <tr>
 <td> NIGHTWATCH</td>
 <td>9:30pm–10pm</td>
@@ -224,7 +261,7 @@ tr:nth-child(even) {
 <td>9pm–11pm (9pm–10pm, Waterloo nearr Imax; 10.15pm–11.15pm, Strand near Charing X station)</td>
 <td>London</td>
 <td>.<td>
-<p>020 3642 6868</p>
+<p>020 3642 6868</p> -->
 
 <main>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
