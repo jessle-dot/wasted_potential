@@ -17,15 +17,16 @@
   function filterChanged() {
     var nameValue = $("#kitchenNameSearch").val().toLowerCase();
     var dayValue = $("#kitchenDayOpenSearch").val().toLowerCase();
+    var timeValue = $("#kitchenTimeOpenSearch").val().toLowerCase();
 
     $(".foodbank-table tr").not(":first").filter(function() {             // gets a list of each element with class table-name-row
       var tableRow = $(this);                                   // this currently refers to the <td> (table-name-row), the parent is the whole <tr>
                                                                          //  we need the whole <tr> because we want to hide the whole row
       var nameFilterPasses = $('.table-name-row', this).text().toLowerCase().indexOf(nameValue) > -1;
       var dayFilterPasses = $('.table-day-open-row', this).text().toLowerCase().indexOf(dayValue) > -1;
+      var timeFilterPasses = $('.table-time-open-row', this).text().toLowerCase().indexOf(timeValue) > -1;
 
-
-      var shouldShowRow = nameFilterPasses && dayFilterPasses; // gets the current text in table-name-row. indexOf sees if our value (text input)
+      var shouldShowRow = nameFilterPasses && dayFilterPasses && timeFilterPasses; // gets the current text in table-name-row. indexOf sees if our value (text input)
                                                                             //  is in the <td>
       tableRow.toggle(shouldShowRow)                                        // shows or hides <tr> based on shouldShowRow variable
     });
@@ -35,6 +36,8 @@
     $("#kitchenNameSearch").on("keyup", filterChanged);
 
     $("#kitchenDayOpenSearch").on("keyup", filterChanged);
+
+    $("#kitchenTimeOpenSearch").on("keyup", filterChanged);
   });
   </script>
 
@@ -112,6 +115,11 @@ tr:nth-child(even) {
   <input id="kitchenDayOpenSearch" type="text" placeholder="Search by Day Open...">
   <br>
 
+  <h2>Filter Kitchens By Opening Times</h2>
+  <p> E.g. 2pm</p>
+  <input id="kitchenTimeOpenSearch" type="text" placeholder="Search by Opening Times...">
+  <br>
+
   <table class="foodbank-table">
     <tr>
       <th>Foodbank Name</th>
@@ -119,15 +127,14 @@ tr:nth-child(even) {
       <th>Opening Hours</th>
       <th>Address</th>
       <th>Postcode</th>
+      <th>Contact</th>
 </tr>
 
 <tr>
   <tr>
-    <td>722 YOUNG PEOPLE SERVICE</td>
-    <td>9am-5pm</td>
     <td class="table-name-row">722 YOUNG PEOPLE SERVICE</td>
     <td class="table-day-open-row">Monday, Tuesday</td>
-    <td class="table-time-row">9am-5pm</td>
+    <td class="table-time-open-row">9am-5pm</td>
     <td>722 Leytonstone High Road, Leytonstone.</td>
     <td>E11 3AJ</td>
     <td>0300 555 1158</td>
@@ -136,9 +143,10 @@ tr:nth-child(even) {
   <tr>
     <td class="table-name-row">AMERICAN INTERNATIONAL CHURCH SOUP KITCHEN</td>
     <td class="table-day-open-row">Monday, Tuesday</td>
-    <td>10am-12am</td>
+    <td class="table-time-open-row">10am-12am</td>
     <td>79a Tottenham Court Rd, (Entrance in Whitfield Street)</td>
     <td>W1T 4TD</td>
+    <td>.</td>
   </tr>
 
 
