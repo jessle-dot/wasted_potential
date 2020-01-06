@@ -16,7 +16,7 @@
   <script>
 
   function filterChanged() {
-    var nameValue = $("#kitchenNameSearch").val().toLowerCase()''
+    var nameValue = $("#kitchenNameSearch").val().toLowerCase();
     var timeValue = $("#kitchenTimeOpenSearch").val().toLowerCase();
     var addressValue = $("#kitchenAddressSearch").val().toLowerCase();
     var postcodevalue = $("#kitchePostcodeSearch").val().toLowerCase();
@@ -30,7 +30,7 @@
       var addressFilterPasses = $('.table-address-row', this).text().toLowerCase().indexOf(addressValue) > -1;
       var postcodeFilterPasses = $('.table-postcode-row', this).text().toLowerCase().indexOf(postcodeValue) > -1;
 
-      var shouldShowRow = nameFilterPasses && dayFilterPasses && timeFilterPasses; && addressFilterPasses; // gets the current text in table-name-row. indexOf sees if our value (text input)
+      var shouldShowRow = nameFilterPasses && timeFilterPasses; && addressFilterPasses; // gets the current text in table-name-row. indexOf sees if our value (text input)
                                                                             //  is in the <td>
       tableRow.toggle(shouldShowRow)                                        // shows or hides <tr> based on shouldShowRow variable
     });
@@ -42,7 +42,7 @@
     $("#kitchenTimeOpenSearch").on("keyup", filterChanged);
 
     $("#kitchenAddressSearch").on("keyup", filterChanged);
-    
+
       $("#kitchenPostcodeSearch").on("keyup", filterChanged);
 
   });
@@ -105,30 +105,29 @@ tr:nth-child(even) {
 </head>
 <body>
 
-  <h2>Filter Kitchens By Name</h2>
+  <h4>Filter Kitchens By Name</h2>
   <p>Type something in the input field to search the list for specific items:</p>
   <input id="kitchenNameSearch" type="text" placeholder="Search by Name...">
   <br>
 
-  <h2>Filter Kitchens By Opening Times</h2>
+  <h4>Filter Kitchens By Opening Times</h2>
   <p> E.g. 2pm</p>
   <input id="kitchenTimeOpenSearch" type="text" placeholder="Search by Opening Times...">
   <br>
 
-  <h2>Filter Kitchens By Address </h2>
+  <h4>Filter Kitchens By Address </h2>
   <p> E.g. 722 Leytonstone High Road, Leytonstone.</p>
   <input id="kitchenAddressSearch" type="text" placeholder="Search by Address...">
   <br>
 
-  <h2>Filter Kitchens By Postcode </h2>
-  <p> E.g. </p>
+  <h4>Filter Kitchens By Postcode </h2>
+  <p> E.g. E11 3AJ </p>
   <input id="kitchenPostcodeSearch" type="text" placeholder="Search by Postcode..">
   <br>
 
   <table class="foodbank-table">
     <tr>
       <th>Foodbank Name</th>
-      <th>Days Open</th>
       <th>Opening Hours</th>
       <th>Address</th>
       <th>Postcode</th>
@@ -138,7 +137,6 @@ tr:nth-child(even) {
 <tr>
   <tr>
     <td class="table-name-row">722 YOUNG PEOPLE SERVICE</td>
-    <td class="table-day-open-row">Monday, Tuesday</td>
     <td class="table-time-open-row">9am-5pm</td>
     <td class="table-address-row">722 Leytonstone High Road, Leytonstone.</td>
     <td class="table-postcode-row">E11 3AJ</td>
@@ -147,7 +145,6 @@ tr:nth-child(even) {
 
   <tr>
     <td class="table-name-row">AMERICAN INTERNATIONAL CHURCH SOUP KITCHEN</td>
-    <td class="table-day-open-row">Monday, Tuesday</td>
     <td class="table-time-open-row">10am-12am</td>
     <td class="table-address-row">79a Tottenham Court Rd, (Entrance in Whitfield Street)</td>
     <td class="table-postcode-row">W1T 4TD</td>

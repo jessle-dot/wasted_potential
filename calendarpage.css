@@ -4,9 +4,22 @@ body {font-family: Verdana, sans-serif;}
 
 
 .month {
+  color: white;
+  font-size: 20px;
+  letter-spacing: 3px;
   padding: 70px 25px;
   width: 100%;
   background: #3F9266;
+  text-align:center;
+}
+
+ul.b{
+  list-style-type: circle;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 16px; padding-right: 0px;
+  color: black;
+}
 
 
 
@@ -40,14 +53,3 @@ body {font-family: Verdana, sans-serif;}
   background: #1abc9c;
   color: white !important
 }
-
-.month {
-  padding: 5px;
-  color: black;
-  border-bottom:4px solid #3D9264;
-  border-radius: 6px;
-  background: #3F9266;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-

@@ -23,7 +23,7 @@ ul.a{
   padding-right: 48px;
   max-width: 1000px;
 }
-h2 {
+h3 {
   padding: 5px;
   color: black;
   border-bottom:4px solid #3D9264;
@@ -33,7 +33,7 @@ h2 {
   margin-bottom: 20px;
 }
 
-h3 {
+h4 {
   padding: 5px;
   color: black;
   border-bottom:4px solid #7CBC99;
@@ -42,4 +42,3 @@ h3 {
   margin-top: 20px;
   margin-bottom: 20px;
 }
-
