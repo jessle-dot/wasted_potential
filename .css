@@ -1,0 +1,30 @@
+body {
+color: rgb(49,58,69);
+font-family: arial;
+}
+div {
+min-height: 100vh;
+width: 100vw;
+}
+
+h1, h2 {
+text-align: center;
+}
+h1 {
+font-size: 5em;
+}
+
+img {
+display: flex;
+padding: 20px;
+margin: 0 auto;
+border-radius: 130px;
+}
+p {
+width: 40%;
+margin: 10vh 10vw;
+font-size: 2em;
+}
+a {
+color: rgb(0,0,0);
+}

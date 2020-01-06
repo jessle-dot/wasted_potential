@@ -10,23 +10,25 @@
   <title>Wasted Potential</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" crossorigin="anonymous">
   <link rel="stylesheet" href ="./commentspage.css">
+  <link rel="stylesheet" href="/Users/jessicabache/Desktop/coding for girls course/coding_course/week_1/wasted_potential/searchbars.css">
   <link href="http://longbootstraplink.css" rel="stylesheet">
   <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script>
 
   function filterChanged() {
-    var nameValue = $("#kitchenNameSearch").val().toLowerCase();
-    var dayValue = $("#kitchenDayOpenSearch").val().toLowerCase();
+    var nameValue = $("#kitchenNameSearch").val().toLowerCase()''
     var timeValue = $("#kitchenTimeOpenSearch").val().toLowerCase();
     var addressValue = $("#kitchenAddressSearch").val().toLowerCase();
+    var postcodevalue = $("#kitchePostcodeSearch").val().toLowerCase();
 
     $(".foodbank-table tr").not(":first").filter(function() {             // gets a list of each element with class table-name-row
       var tableRow = $(this);                                   // this currently refers to the <td> (table-name-row), the parent is the whole <tr>
                                                                          //  we need the whole <tr> because we want to hide the whole row
       var nameFilterPasses = $('.table-name-row', this).text().toLowerCase().indexOf(nameValue) > -1;
-      var dayFilterPasses = $('.table-day-open-row', this).text().toLowerCase().indexOf(dayValue) > -1;
+
       var timeFilterPasses = $('.table-time-open-row', this).text().toLowerCase().indexOf(timeValue) > -1;
       var addressFilterPasses = $('.table-address-row', this).text().toLowerCase().indexOf(addressValue) > -1;
+      var postcodeFilterPasses = $('.table-postcode-row', this).text().toLowerCase().indexOf(postcodeValue) > -1;
 
       var shouldShowRow = nameFilterPasses && dayFilterPasses && timeFilterPasses; && addressFilterPasses; // gets the current text in table-name-row. indexOf sees if our value (text input)
                                                                             //  is in the <td>
@@ -37,58 +39,52 @@
   $(document).ready(function() {                                           // the code in here is only run when the webpage is ready
     $("#kitchenNameSearch").on("keyup", filterChanged);
 
-    $("#kitchenDayOpenSearch").on("keyup", filterChanged);
-
     $("#kitchenTimeOpenSearch").on("keyup", filterChanged);
 
     $("#kitchenAddressSearch").on("keyup", filterChanged);
+    
+      $("#kitchenPostcodeSearch").on("keyup", filterChanged);
+
   });
   </script>
 
 </head>
 
-<body>
-  <h1>Wasted<span class="badge badge-secondary">Potential</span></h1>
 
+<body class="container">
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="Users/jessicabache/Desktop/coding for girls course/coding_course/week_1/wasted_potential/commentspage.html"> Wasted Potential</a>
+    <a class="navbar-brand" href="./aboutpage.html"><h1>Wasted<span class="badge badge-secondary">Potential</span></h1></a>
+
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item active">
-          <a class="nav-link" href="/Users/jessicabache/Desktop/coding for girls course/coding_course/week_1/wasted_potential/wastedpotential_soupkitchens.html">Home <span class="sr-only">(current)</span></a>
-        </li>
+
+      <a class="nav-link" href="./home.html">HOME <span class="sr-only">(current)</span></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="./aboutpage.html">ABOUT</a>
+    </li>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        FIND
+      </a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+        <a class="dropdown-item" href="./calendarpage.html">CALENDAR</a>
+        <a class="dropdown-item" href="./home.html">AREA</a>
+        <a class="dropdown-item" href=".l/home.html">AVAILABILITY</a>
         <li class="nav-item">
-          <a class="nav-link" href="/Users/jessicabache/Desktop/coding for girls course/coding_course/week_1/wasted_potential/wastedpotential_soupkitchens.html">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Availability</a>
-        <li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Area</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="">Calendar</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Find Soup Kitchens
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="#">Availability</a>
-            <a class="dropdown-item" href="#">Area</a>
-            <a class="dropdown-item" href="#">Calendar</a>
-            <li class="nav-item">
-              <a class="nav-link" href="/Users/jessicabache/Desktop/coding for girls course/coding_course/week_1/wasted_potential/commentspage.html">Contact us</a>
+          <a class="nav-link" href="./commentspage.html">CONTACT US</a>
             </li>
       </ul>
     </div>
   </nav>
 
 <main>
-  <h3> Soup Kitchens with free food open on Mondays </h3>
+  <h3> Soup Kitchens with free food open on Sundays </h3>
+
   <style>
 table {
   font-family: arial, sans-serif;
@@ -114,19 +110,19 @@ tr:nth-child(even) {
   <input id="kitchenNameSearch" type="text" placeholder="Search by Name...">
   <br>
 
-  <h2>Filter Kitchens By Day Open</h2>
-  <p> E.g. monday</p>
-  <input id="kitchenDayOpenSearch" type="text" placeholder="Search by Day Open...">
-  <br>
-
   <h2>Filter Kitchens By Opening Times</h2>
   <p> E.g. 2pm</p>
   <input id="kitchenTimeOpenSearch" type="text" placeholder="Search by Opening Times...">
   <br>
 
-  <h2>Filter Kitchens By Address</h2>
-  <p> E.g. St Gabriel’s Community Centre, 21 Hatchard Road, London</p>
+  <h2>Filter Kitchens By Address </h2>
+  <p> E.g. 722 Leytonstone High Road, Leytonstone.</p>
   <input id="kitchenAddressSearch" type="text" placeholder="Search by Address...">
+  <br>
+
+  <h2>Filter Kitchens By Postcode </h2>
+  <p> E.g. </p>
+  <input id="kitchenPostcodeSearch" type="text" placeholder="Search by Postcode..">
   <br>
 
   <table class="foodbank-table">
@@ -145,7 +141,7 @@ tr:nth-child(even) {
     <td class="table-day-open-row">Monday, Tuesday</td>
     <td class="table-time-open-row">9am-5pm</td>
     <td class="table-address-row">722 Leytonstone High Road, Leytonstone.</td>
-    <td>E11 3AJ</td>
+    <td class="table-postcode-row">E11 3AJ</td>
     <td>0300 555 1158</td>
   </tr>
 
@@ -154,10 +150,9 @@ tr:nth-child(even) {
     <td class="table-day-open-row">Monday, Tuesday</td>
     <td class="table-time-open-row">10am-12am</td>
     <td class="table-address-row">79a Tottenham Court Rd, (Entrance in Whitfield Street)</td>
-    <td>W1T 4TD</td>
+    <td class="table-postcode-row">W1T 4TD</td>
     <td>.</td>
   </tr>
-
 
     <tr>
       <td class="table-name-row">CARIS ISLINGTON</td>
@@ -176,15 +171,15 @@ tr:nth-child(even) {
 </tr>
 
 <tr>
-  <td class="table-name-row">FARM STREET CHURCH</td>
-  <td class="table-time-open-row">8pm-10:20pm</td>
+  <td td class="table-name-row">FARM STREET CHURCH</td>
+  <td>8pm-10:20pm</td>
   <td class="table-address-row">114 Mount Street,London</td>
-  <td>W1K 3AH</td>
+  <td class="table-address-row">W1K 3AH</td>
   <td>020 7493 7811</td>
 </tr>
 
 <tr>
-<td class="table-name-row">KING’S CROSS BAPTIST CHURCH</td>
+<td td class="table-name-row">KING’S CROSS BAPTIST CHURCH</td>
 <td class="table-time-open-row">11am-2pm</td>
 <td class="table-address-row">Vernon Square, King’s Cross Road, London</td>
   <td>WC1X 9EW</td>
@@ -200,7 +195,7 @@ tr:nth-child(even) {
 </tr>
 
 <tr>
-  <td class="table-name-row"> MISSIONARIES OF CHARITY SOUP KITCHENS</td>
+  <td td class="table-name-row"> MISSIONARIES OF CHARITY SOUP KITCHENS</td>
   <td class="table-time-open-row"><p>3:30pm-5pm (Pius X Church Hall)</p>
   <p>10:30am–11am (112-116 St George’s Road)</p>
   <p>10pm–10:30pm (Tothill Street)</p>
@@ -211,7 +206,7 @@ tr:nth-child(even) {
 </tr>
 
 <tr>
-    <td class="table-name-row"> MUSWELL HILL CHURCHES SOUP KITCHEN</td>
+    <td td class="table-name-row"> MUSWELL HILL CHURCHES SOUP KITCHEN</td>
     <td class="table-time-open-row">7:45pm–8:45pm</td>
     <td class="table-address-row"> Muswell Hill Baptist Church, 2 Dukes Ave, London</td>
     <td>N10 2PT</td>

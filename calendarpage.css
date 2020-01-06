@@ -2,18 +2,17 @@
 ul {list-style-type: none;}
 body {font-family: Verdana, sans-serif;}
 
+
 .month {
   padding: 70px 25px;
   width: 100%;
-  background: #3D9264;
-  text-align: center;
-}
+  background: #3F9266;
+
 
 
 .month ul li {
   color: white;
   font-size: 20px;
-  text-transform: uppercase;
   letter-spacing: 3px;
 }
 
@@ -41,7 +40,14 @@ body {font-family: Verdana, sans-serif;}
   background: #1abc9c;
   color: white !important
 }
-body {
-  padding-top: 1rem;
-  /* background: black;
-  color: white; */
+
+.month {
+  padding: 5px;
+  color: black;
+  border-bottom:4px solid #3D9264;
+  border-radius: 6px;
+  background: #3F9266;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
