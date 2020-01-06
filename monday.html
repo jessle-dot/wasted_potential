@@ -25,6 +25,7 @@
       var tableRow = $(this);                                   // this currently refers to the <td> (table-name-row), the parent is the whole <tr>
                                                                          //  we need the whole <tr> because we want to hide the whole row
       var nameFilterPasses = $('.table-name-row', this).text().toLowerCase().indexOf(nameValue) > -1;
+
       var timeFilterPasses = $('.table-time-open-row', this).text().toLowerCase().indexOf(timeValue) > -1;
       var addressFilterPasses = $('.table-address-row', this).text().toLowerCase().indexOf(addressValue) > -1;
       var postcodeFilterPasses = $('.table-postcode-row', this).text().toLowerCase().indexOf(postcodeValue) > -1;
@@ -38,26 +39,29 @@
   $(document).ready(function() {                                           // the code in here is only run when the webpage is ready
     $("#kitchenNameSearch").on("keyup", filterChanged);
 
-
     $("#kitchenTimeOpenSearch").on("keyup", filterChanged);
 
     $("#kitchenAddressSearch").on("keyup", filterChanged);
-
+    
       $("#kitchenPostcodeSearch").on("keyup", filterChanged);
+
   });
   </script>
 
 </head>
 
+
 <body class="container">
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="./aboutpage.html"><h1>Wasted<span class="badge badge-secondary">Potential</span></h1></a>
+
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item active">
+
       <a class="nav-link" href="./home.html">HOME <span class="sr-only">(current)</span></a>
     </li>
     <li class="nav-item">
@@ -80,6 +84,7 @@
 
 <main>
   <h3> Soup Kitchens with free food open on Sundays </h3>
+
   <style>
 table {
   font-family: arial, sans-serif;
@@ -182,7 +187,7 @@ tr:nth-child(even) {
 </tr>
 
 <tr>
-<td td class="table-name-row">LOVE STREATHAM</td>
+<td class="table-name-row">LOVE STREATHAM</td>
 <td class="table-time-open-row">7pm-9pm</td>
 <td class="table-address-row">Streatham United Reform Church, 388 Streatham High Road, London </td>
   <td>SW16 6HX</td>
@@ -241,7 +246,7 @@ tr:nth-child(even) {
 </tr>
 
 <tr>
-<td class="table-name-row">TEEN CHALLENGE LONDON</td>
+<td class="table-name-row"> TEEN CHALLENGE LONDON</td>
 <td class="table-time-open-row">9pm-11pm (Whitechapel)</td>
 <td class="table-address-row">Wilkerson House, Uphall Road, Ilford, London</td>
 <td>IG1 2JJ</td>
