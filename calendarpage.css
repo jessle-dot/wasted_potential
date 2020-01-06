@@ -1,7 +1,10 @@
+ul {
+  list-style-type: none;
+}
 
-ul {list-style-type: none;}
-body {font-family: Verdana, sans-serif;}
-
+body {
+  font-family: Verdana, sans-serif;
+}
 
 .month {
   color: white;
@@ -10,18 +13,17 @@ body {font-family: Verdana, sans-serif;}
   padding: 70px 25px;
   width: 100%;
   background: #3F9266;
-  text-align:center;
+  text-align: center;
 }
 
-ul.b{
+ul.b {
   list-style-type: circle;
   padding-top: 10px;
   padding-bottom: 10px;
-  padding-left: 16px; padding-right: 0px;
+  padding-left: 16px;
+  padding-right: 0px;
   color: black;
 }
-
-
 
 .month ul li {
   color: white;
@@ -29,12 +31,11 @@ ul.b{
   letter-spacing: 3px;
 }
 
-
 /* Weekdays (Mon-Sun) */
 .weekdays {
   margin: 0;
   padding: 10px 0;
-  background-color:#ddd;
+  background-color: #ddd;
 }
 
 .weekdays li {
@@ -44,7 +45,7 @@ ul.b{
   text-align: center;
 }
 
-.weekdays li:hover{
+.weekdays li:hover {
   color: red
 }
 
