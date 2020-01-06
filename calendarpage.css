@@ -13,7 +13,6 @@ body {font-family: Verdana, sans-serif;}
 .month ul li {
   color: white;
   font-size: 20px;
-  text-transform: uppercase;
   letter-spacing: 3px;
 }
 
@@ -40,4 +39,13 @@ body {font-family: Verdana, sans-serif;}
   padding: 5px;
   background: #1abc9c;
   color: white !important
+}
+.month {
+  padding: 5px;
+  color: black;
+  border-bottom:4px solid #3D9264;
+  border-radius: 6px;
+  background: #3F9266;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }

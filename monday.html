@@ -16,8 +16,7 @@
   <script>
 
   function filterChanged() {
-    var nameValue = $("#kitchenNameSearch").val().toLowerCase();
-    var dayValue = $("#kitchenDayOpenSearch").val().toLowerCase();
+    var nameValue = $("#kitchenNameSearch").val().toLowerCase()''
     var timeValue = $("#kitchenTimeOpenSearch").val().toLowerCase();
     var addressValue = $("#kitchenAddressSearch").val().toLowerCase();
     var postcodevalue = $("#kitchePostcodeSearch").val().toLowerCase();
@@ -26,7 +25,6 @@
       var tableRow = $(this);                                   // this currently refers to the <td> (table-name-row), the parent is the whole <tr>
                                                                          //  we need the whole <tr> because we want to hide the whole row
       var nameFilterPasses = $('.table-name-row', this).text().toLowerCase().indexOf(nameValue) > -1;
-      var dayFilterPasses = $('.table-day-open-row', this).text().toLowerCase().indexOf(dayValue) > -1;
       var timeFilterPasses = $('.table-time-open-row', this).text().toLowerCase().indexOf(timeValue) > -1;
       var addressFilterPasses = $('.table-address-row', this).text().toLowerCase().indexOf(addressValue) > -1;
       var postcodeFilterPasses = $('.table-postcode-row', this).text().toLowerCase().indexOf(postcodeValue) > -1;
@@ -40,7 +38,6 @@
   $(document).ready(function() {                                           // the code in here is only run when the webpage is ready
     $("#kitchenNameSearch").on("keyup", filterChanged);
 
-    $("#kitchenDayOpenSearch").on("keyup", filterChanged);
 
     $("#kitchenTimeOpenSearch").on("keyup", filterChanged);
 
@@ -82,7 +79,7 @@
   </nav>
 
 <main>
-  <h3> Soup Kitchens with free food open on Mondays </h3>
+  <h3> Soup Kitchens with free food open on Sundays </h3>
   <style>
 table {
   font-family: arial, sans-serif;
@@ -106,11 +103,6 @@ tr:nth-child(even) {
   <h2>Filter Kitchens By Name</h2>
   <p>Type something in the input field to search the list for specific items:</p>
   <input id="kitchenNameSearch" type="text" placeholder="Search by Name...">
-  <br>
-
-  <h2>Filter Kitchens By Day Open</h2>
-  <p> E.g. monday</p>
-  <input id="kitchenDayOpenSearch" type="text" placeholder="Search by Day Open...">
   <br>
 
   <h2>Filter Kitchens By Opening Times</h2>

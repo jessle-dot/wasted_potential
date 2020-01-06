@@ -23,7 +23,7 @@ ul.a{
   padding-right: 48px;
   max-width: 1000px;
 }
-h3 {
+h2 {
   padding: 5px;
   color: black;
   border-bottom:4px solid #3D9264;
@@ -33,6 +33,15 @@ h3 {
   margin-bottom: 20px;
 }
 
+h3 {
+  padding: 5px;
+  color: black;
+  border-bottom:4px solid #7CBC99;
+  border-radius: 6px;
+  background: #7AA77E;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
 
 /*
 #some-id { ... }                e.g. #email-button { ... }
