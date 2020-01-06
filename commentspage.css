@@ -5,6 +5,12 @@ body {
   padding-bottom: 1rem;
 
 }
+
+ul.a{
+  list-style-type: circle;
+  padding-left: 16px; padding-right: 0px;
+  color: black;
+}
 .starter-template {
   padding: 3rem 1.5rem;
   text-align: center;
